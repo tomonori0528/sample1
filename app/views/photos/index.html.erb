@@ -1,0 +1,13 @@
+<h1>Byosha</h1>
+<h3>写真一覧</h3>
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<%= link_to "写真投稿へ", new_photo_path %>
+<div class="photos-container">
+    <% @photos.each do |p| %>
+        <div class="photo">
+        <%= image_tag p.image_url, size: "250x200" if p.image? %>
+        <%= link_to "描写へ", photo_path(p.id) %>
+        </div>
+    <% end %>

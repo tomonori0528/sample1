@@ -1,0 +1,12 @@
+<h1>Byousha</h1>
+<h3>描写ページ</h3>
+
+<%= form_for @narrative do |f| %>
+    <div class="field">
+      <%= f.label :描写 %>
+      <%= f.text_field :body, :size => 140 %>
+    </div>
+  
+  
+    <%= f.submit "投稿する" %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Byosha</h1>
+<h3>描写ページ</h3>
+
+<%= image_tag @photo.image_url, size: "250x200" if @photo.image? %>
+
+<%= form_with(model: [@photo, @narrative], local: true) do |f| %>
+    <%= f.text_area :body %>
+    <%= button_tag type: "submit" do %>
+    コメントする
+    <% end %>
+<% end %>
+    
+<% @narratives.each do |c| %>
+
+    <div>
+    <%= c.body %>
+    </div>
+    
+<% end %>
+
+<%= link_to "一覧ページに戻る", photos_path %>

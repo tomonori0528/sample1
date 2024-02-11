@@ -1,0 +1,16 @@
+<h1>Byosha</h1>
+<h3>写真投稿ページ</h3>
+  <%= form_for @photo do |f| %>
+      <div class="field">
+
+        <%= f.label :写真 %>
+      
+        <%= f.file_field :image %>
+
+        <%= f.submit "写真を投稿する" %>
+
+      </div>
+  <% end %>
+
+
+<%= link_to "一覧に戻る", photos_path %>
