@@ -1,16 +1,24 @@
-<h1>Byosha</h1>
-<h3>写真投稿ページ</h3>
+<header>
+  <h1>Byosha</h1>
+  <h3>写真投稿ページ</h3>
+  <div class="header-list">
+      <ul>
+        <li><%= link_to "一覧ページに戻る", photos_path %></li>
+        <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+   </div>
+</header>
+
+
   <%= form_for @photo do |f| %>
       <div class="field">
 
-        <%= f.label :写真 %>
+      
       
         <%= f.file_field :image %>
 
-        <%= f.submit "写真を投稿する" %>
+        <%= f.submit "写真を投稿" %>
 
       </div>
   <% end %>
 
-
-<%= link_to "一覧に戻る", photos_path %>

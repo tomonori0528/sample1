@@ -1,14 +1,28 @@
-<h1>Byosha</h1>
-<h3>描写ページ</h3>
+<header>
+  <h1>Byosha</h1>
+  <h3>写真投稿ページ</h3>
+  <div class="header-list">
+      <ul>
+        
+        <li><%= link_to "写真投稿へ", new_photo_path %></li>
+        <li><%= link_to "一覧ページに戻る", photos_path %></li>
+        <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+   </div>
+</header>
 
-<%= image_tag @photo.image_url, size: "250x200" if @photo.image? %>
+<div class="photo1">
+  <%= image_tag @photo.image_url, size: "500x400" if @photo.image? %>
+</div>
 
-<%= form_with(model: [@photo, @narrative], local: true) do |f| %>
-    <%= f.text_area :body %>
-    <%= button_tag type: "submit" do %>
-    コメントする
+<div class="text">
+    <%= form_with(model: [@photo, @narrative], local: true) do |f| %>
+        <%= f.text_area :body, :size=> "100x5" %>
+        <%= button_tag type: "submit" do %>
+        コメントする
+        <% end %>
     <% end %>
-<% end %>
+</div>
     
 <% @narratives.each do |c| %>
 
@@ -18,4 +32,4 @@
     
 <% end %>
 
-<%= link_to "一覧ページに戻る", photos_path %>
+
