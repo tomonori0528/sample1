@@ -3,24 +3,24 @@
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field1">
+  <div class="field9">
    <h2>メール</h2><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field2">
+  <div class="field10">
     <h2>パスワード</h2><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field3">
+    <div class="field11">
       <%= f.check_box :remember_me %>
       <h2>覚える</h2>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions4">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
